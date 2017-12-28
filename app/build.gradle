@@ -1,3 +1,10 @@
+allprojects {
+    repositories {
+        jcenter()
+        google()
+    }
+}
+
 apply plugin: 'com.android.application'
 
 apply plugin: 'kotlin-android'
@@ -27,6 +34,29 @@ dependencies {
     implementation"org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
     implementation 'com.android.support:appcompat-v7:26.1.0'
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    //RxAndroid & RxJava
+    implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
+    implementation 'io.reactivex.rxjava2:rxjava:2.1.7'
+
+    // ViewModel and LiveData
+    implementation "android.arch.lifecycle:extensions:1.0.0"
+
+    // Java8 support for Lifecycles
+    implementation "android.arch.lifecycle:common-java8:1.0.0"
+
+    // Room
+    implementation "android.arch.persistence.room:runtime:1.0.0"
+    annotationProcessor "android.arch.persistence.room:compiler:1.0.0"
+
+    // Paging
+    implementation "android.arch.paging:runtime:1.0.0-alpha4-1"
+
+    // RxJava support for Room
+    implementation "android.arch.persistence.room:rxjava2:1.0.0"
+
+    // ReactiveStreams support for LiveData
+    implementation "android.arch.lifecycle:reactivestreams:1.0.0"
+
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
