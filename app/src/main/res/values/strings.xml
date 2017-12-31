@@ -2,4 +2,6 @@
     <string name="app_name">SumaLogos</string>
     <string name="login_with_facebook">Login with Facebook</string>
     <string name="login_with_google">Login with Google</string>
+    <string name="facebook_app_id">187481018500116</string>
+    <string name="fb_login_protocol_scheme">fb187481018500116</string>
 </resources>
