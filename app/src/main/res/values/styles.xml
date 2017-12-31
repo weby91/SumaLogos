@@ -8,4 +8,25 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="AppTheme.NoActionBar" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <style name="SmallTextSize">
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="RegisterButton" parent="SmallTextSize">
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:paddingBottom">10dp</item>
+        <item name="android:paddingLeft">40dp</item>
+        <item name="android:paddingRight">40dp</item>
+    </style>
+
+    <style name="SocmedLogin" parent="RegisterButton">
+        <item name="android:textColor">@color/colorWhite</item>
+    </style>
+
 </resources>

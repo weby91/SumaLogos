@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.sumalogos.webster.sumalogos.activity.LandingPageActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/mountain_2"
+        android:scaleType="centerCrop" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/llSeparator2"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="30dp"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/tvFbLogin"
+                style="@style/SocmedLogin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/facebook_button_shape"
+                android:drawableLeft="@drawable/ic_fb"
+                android:drawablePadding="5dp"
+                android:drawableStart="@drawable/ic_fb"
+                android:gravity="center_vertical"
+                android:text="@string/login_with_facebook"
+                android:textColor="@color/colorWhite" />
+
+            <TextView
+                android:id="@+id/tvGoogleLogin"
+                style="@style/SocmedLogin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/google_button_shape"
+                android:drawableLeft="@drawable/ic_google"
+                android:drawablePadding="5dp"
+                android:drawableStart="@drawable/ic_google"
+                android:gravity="center_vertical"
+                android:text="@string/login_with_google"
+                android:textColor="@color/colorWhite" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llSeparator2"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal" />
+
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>
