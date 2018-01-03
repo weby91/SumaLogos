@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.support.v7.app.AppCompatActivity
 import com.sumalogos.webster.sumalogos.R
-import util.AppConstant
+import com.sumalogos.webster.sumalogos.util.AppConstant
 
 /**
  * Created by webster on 29/12/17.

@@ -13,10 +13,11 @@ apply plugin: 'kotlin-kapt'
 ext.kotlin_version = '1.2.10'
 
 android {
+    flavorDimensions "default"
     compileSdkVersion 26
     defaultConfig {
         applicationId "com.sumalogos.webster.sumalogos"
-        minSdkVersion 15
+        minSdkVersion 21
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
@@ -26,6 +27,14 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    productFlavors {
+        development {
+            buildConfigField "String", "BASE_URL", '"http://139.59.241.229:3000/api/v1/"'
+        }
+        production {
+            buildConfigField "String", "BASE_URL", '"http://139.59.241.229:3000/api/v1/"'
         }
     }
 }
@@ -47,15 +56,7 @@ dependencies {
     // Java8 support for Lifecycles
     implementation "android.arch.lifecycle:common-java8:1.0.0"
 
-    // Room
-    implementation "android.arch.persistence.room:runtime:1.0.0"
-    annotationProcessor "android.arch.persistence.room:compiler:1.0.0"
-
-    // Paging
-    implementation "android.arch.paging:runtime:1.0.0-alpha4-1"
-
     // RxJava support for Room
-    implementation "android.arch.persistence.room:rxjava2:1.0.0"
 
     // ReactiveStreams support for LiveData
     implementation "android.arch.lifecycle:reactivestreams:1.0.0"
@@ -67,4 +68,15 @@ dependencies {
     compile 'com.google.firebase:firebase-messaging:11.8.0'
 
     implementation 'com.facebook.android:facebook-android-sdk:4.21.1'
+
+    implementation "android.arch.persistence.room:runtime:$rootProject.archRoomVersion"
+    annotationProcessor "android.arch.persistence.room:compiler:$archRoomVersion"
+    kapt "android.arch.persistence.room:compiler:$rootProject.archRoomVersion"
+    implementation "android.arch.persistence.room:rxjava2:$rootProject.archRoomVersion"
+
+    implementation 'com.google.code.gson:gson:2.8.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.1.0'
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.4.1'
+    implementation 'com.squareup.okhttp3:okhttp:3.8.1'
 }

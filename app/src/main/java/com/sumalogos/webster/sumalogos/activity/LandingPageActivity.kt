@@ -3,7 +3,7 @@ package com.sumalogos.webster.sumalogos.activity
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import com.sumalogos.webster.sumalogos.R
-import fragment.LandingPageFragment
+import com.sumalogos.webster.sumalogos.fragment.LandingPageFragment
 
 class LandingPageActivity : AppCompatActivity() {
 

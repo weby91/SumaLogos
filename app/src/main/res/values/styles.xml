@@ -29,6 +29,10 @@
         <item name="android:textColor">@color/colorWhite</item>
     </style>
 
+    <style name="GoogleLogin" parent="RegisterButton">
+        <item name="android:textColor">@color/colorBlack</item>
+    </style>
+
     <style name="MM">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">match_parent</item>

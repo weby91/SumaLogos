@@ -1,5 +1,6 @@
-package fragment
+package com.sumalogos.webster.sumalogos.fragment
 
+import android.arch.lifecycle.Observer
 import android.content.Intent
 import android.os.Bundle
 import android.support.v4.app.Fragment
@@ -13,7 +14,12 @@ import com.facebook.FacebookCallback
 import com.facebook.FacebookException
 import com.facebook.GraphRequest
 import com.facebook.login.LoginResult
+import com.sumalogos.webster.sumalogos.MyApplication
 import com.sumalogos.webster.sumalogos.R
+import com.sumalogos.webster.sumalogos.util.AppDatabase
+import com.sumalogos.webster.sumalogos.util.LiveDataResult
+import com.sumalogos.webster.sumalogos.util.Status
+import com.sumalogos.webster.sumalogos.viewmodel.LandingPageViewModel
 import kotlinx.android.synthetic.main.fragment_landing.*
 import kotlinx.android.synthetic.main.fragment_landing.view.*
 
@@ -30,6 +36,8 @@ class LandingPageFragment : Fragment() {
 
     private lateinit var vFragment: View
 
+    private var appDatabase: AppDatabase? = null
+
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         vFragment = inflater!!.inflate(R.layout.fragment_landing, container, false)
 
@@ -43,17 +51,11 @@ class LandingPageFragment : Fragment() {
 
         vFragment.loginButton.fragment = this
         vFragment.loginButton.setReadPermissions("public_profile", "email")
+        appDatabase = MyApplication().getAppDatabase()
 
         vFragment.tvFbLogin.setOnClickListener {
             fbOnClick()
         }
-
-//        tvFbLogin?.setOnTouchListener({ v, event ->
-//            if (MotionEvent.ACTION_UP == event.action)
-//                Toast.makeText(getApplicationContext(), "onTouch: Up", Toast.LENGTH_SHORT).show()
-//            false
-//        })
-
     }
 
     private fun fbOnClick() {
@@ -66,18 +68,13 @@ class LandingPageFragment : Fragment() {
 
                         val request = GraphRequest.newMeRequest(
                                 loginResult.accessToken
-                        ) { `object`, response ->
+                        ) { result, response ->
 
-                            Log.d("DUMA", "Response" + response.rawResponse)
-
-//                            viewModel.facebookRequestOnCompleted(`object`)
-//
-//                            tvFBLogin.setSelected(facebookDataAccess.isFbLogin())
-//                            tvFBLogin.setText(getString(R.string.facebook_connected_text))
                             !tvFbLogin!!.isEnabled
 
+                            createUser(result.getString("name"))
+
                         }
-                        Log.d("DUMA", "Result" )
 
                         val parameters = Bundle()
 
@@ -93,15 +90,33 @@ class LandingPageFragment : Fragment() {
 
                     }
 
-                    override fun onError(e: FacebookException) {
-                        Log.e("DUMA", e.message)
-                    }
+                    override fun onError(e: FacebookException) {}
                 })
 
         !loginButton.isPressed
         loginButton.invalidate()
     }
 
+    fun createUser(fullName: String) {
+        val landingPageViewModel = LandingPageViewModel()
+
+        val liveData = landingPageViewModel.createUser(fullName)
+
+        liveData.observe(this, object : Observer<LiveDataResult<*>> {
+            override fun onChanged(response: LiveDataResult<*>?) {
+                try {
+                    liveData.removeObserver(this)
+
+                    if (response != null && response.status === Status.SUCCESS) {
+                        //TODO TBC HERE
+                    }
+                } catch (e: Exception) {
+                    Log.d("DUMA", e.message)
+                }
+
+            }
+        })
+    }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         fbCallbackManager?.onActivityResult(requestCode, resultCode, data)

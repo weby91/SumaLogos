@@ -1,4 +1,4 @@
-package util
+package com.sumalogos.webster.sumalogos.util
 
 import com.google.firebase.iid.FirebaseInstanceId
 import com.google.firebase.iid.FirebaseInstanceIdService
