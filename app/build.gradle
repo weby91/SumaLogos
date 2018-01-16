@@ -1,7 +1,6 @@
 allprojects {
     repositories {
         jcenter()
-        google()
     }
 }
 
@@ -66,7 +65,9 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
 
-    compile 'com.google.firebase:firebase-messaging:11.8.0'
+    implementation 'com.google.firebase:firebase-messaging:11.8.0'
+    implementation 'com.google.firebase:firebase-core:11.8.0'
+    implementation 'com.google.android.gms:play-services-location:11.8.0'
 
     implementation 'com.facebook.android:facebook-android-sdk:4.21.1'
 
@@ -89,3 +90,5 @@ dependencies {
 
     implementation 'com.github.moondroid.coverflow:library:1.0'
 }
+
+apply plugin: 'com.google.gms.google-services'

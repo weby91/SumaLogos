@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "296391084338",
+    "firebase_url": "https://summa-logos.firebaseio.com",
+    "project_id": "summa-logos",
+    "storage_bucket": "summa-logos.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:296391084338:android:a30473090cb4ea7b",
+        "android_client_info": {
+          "package_name": "com.sumalogos.webster.sumalogos"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "296391084338-n97kgfpb5am2undc0kc39sm13cpqpm4n.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.sumalogos.webster.sumalogos",
+            "certificate_hash": "74a4a17eb33a1b960431b43a739a782898a9d938"
+          }
+        },
+        {
+          "client_id": "296391084338-sfho5on9o44o9db8q9p0okq1bqa7aaih.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBMwxizr32hzK6zNwh_5AP5AmFrt1U1RZM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "296391084338-sfho5on9o44o9db8q9p0okq1bqa7aaih.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
