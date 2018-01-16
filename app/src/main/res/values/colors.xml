@@ -6,4 +6,6 @@
     <color name="facebook_login_button">#4A6EA8</color>
     <color name="colorWhite">#FFFFFFFF</color>
     <color name="colorBlack">#FF000000</color>
+    <color name="colorSemiLightGray">#D9D9D9</color>
+    <color name="mediumGrey">#707070</color>
 </resources>

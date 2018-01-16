@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <ImageView
+        android:id="@+id/ivBackgroundHeader"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:scaleType="centerCrop"
+        android:background="@drawable/gradient_home_header_background" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/ivBackgroundHeader"
+        android:gravity="center"
+        android:layout_alignTop="@id/ivBackgroundHeader"
+        android:layout_centerInParent="true"
+        android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tvDay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Total Bacaan"
+        android:textSize="32sp"
+        android:layout_gravity="center"
+        android:textColor="@color/colorWhite"/>
+
+        <View
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorWhite"/>
+
+        <TextView
+            android:id="@+id/tvDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="25 hari"
+            android:textSize="24sp"
+            android:textColor="@color/colorWhite"/>
+
+        <SeekBar
+            android:layout_marginTop="5dp"
+            android:layout_below="@id/tvDayTotal"
+            android:layout_gravity="center_vertical"
+            android:id="@+id/seekBar2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/SeekbarGradient"
+            android:progress="30"
+            android:max="365"
+            />
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llTopHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="120dp">
+
+        <android.support.v7.widget.RecyclerView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/recycler_view"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/llTopHeader"
+            android:scrollbars="none" />
+
+        <!--<android.support.v7.widget.CardView
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/card_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            card_view:cardElevation="10dp"
+            card_view:cardUseCompatPadding="true"
+            card_view:cardCornerRadius="8dp"
+            >
+
+            &lt;!&ndash;   Recycler View Item Row   &ndash;&gt;
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvDays"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Rabu"
+                    android:textSize="32sp"
+                    android:textColor="@color/colorBlack"/>
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="1dp"
+                    android:background="@color/colorBlack"/>
+
+                <TextView
+                    android:id="@+id/tvDates"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="12 Januari 2018"
+                    android:textSize="24sp"
+                    android:textColor="@color/colorBlack"/>
+
+                <TextView
+                    android:visibility="gone"
+                    android:id="@+id/tvSummary"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Total bacaan"
+                    android:gravity="center"
+                    android:textSize="16sp"
+                    android:layout_marginBottom="5dp"/>
+
+                <TextView
+                    android:visibility="gone"
+                    android:gravity="center"
+                    android:id="@+id/tvDayTotal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvSummary"
+                    android:text="25 hari"
+                    android:textStyle="bold"
+                    android:textSize="20sp"/>
+
+                <SeekBar
+                    android:visibility="gone"
+                    android:layout_marginTop="5dp"
+                    android:layout_below="@id/tvDayTotal"
+                    android:layout_gravity="center_vertical"
+                    android:id="@+id/seekBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/SeekbarGradient"
+                    android:progress="30"
+                    android:max="365"
+                    />
+
+
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>-->
+    </LinearLayout>
+
+    <!--<android.support.v7.widget.RecyclerView-->
+        <!--xmlns:android="http://schemas.android.com/apk/res/android"-->
+        <!--android:id="@+id/recycler_view"-->
+        <!--android:layout_width="fill_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_below="@+id/llTopHeader"-->
+        <!--android:scrollbars="none" />-->
+
+
+    </RelativeLayout>
+
+
+
+</android.support.constraint.ConstraintLayout>

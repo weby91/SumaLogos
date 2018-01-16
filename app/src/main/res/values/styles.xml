@@ -43,4 +43,12 @@
         <item name="android:layout_height">wrap_content</item>
     </style>
 
+    <style name="SeekbarGradient">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:maxHeight">12dp</item>
+        <item name="android:progressDrawable">@drawable/seekbar_gradient_dark_green</item>
+        <item name="android:thumb">@android:color/transparent</item>
+    </style>
+
 </resources>

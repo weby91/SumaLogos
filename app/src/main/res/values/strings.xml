@@ -4,4 +4,11 @@
     <string name="login_with_google">Login with Google</string>
     <string name="facebook_app_id">187481018500116</string>
     <string name="fb_login_protocol_scheme">fb187481018500116</string>
+
+    <string name="action_settings">Settings</string>
+
+    <string name="title1">God of War Ascension</string>
+    <string name="title2">Assassin\'s Creed III</string>
+    <string name="title3">Hitman Absolution</string>
+    <string name="title4">Dishonored</string>
 </resources>

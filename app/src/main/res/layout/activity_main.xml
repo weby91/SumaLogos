@@ -1,0 +1,41 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:coverflow="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/darker_gray" >
+
+
+    <it.moondroid.coverflow.components.ui.containers.FeatureCoverFlow
+        android:id="@+id/coverflow"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        coverflow:coverHeight="@dimen/cover_height"
+        coverflow:coverWidth="@dimen/cover_width"
+        coverflow:maxScaleFactor="1.5"
+        coverflow:reflectionGap="0px"
+        coverflow:rotationThreshold="2"
+        coverflow:scalingThreshold="2"
+        coverflow:reflectionOpacity="0x00"
+        coverflow:shouldRepeat="false"
+        coverflow:spacing="0.6" />
+
+
+    <Button
+        android:id="@+id/btn_go_next"
+        android:layout_alignParentBottom="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:onClick="goNextCover"
+        android:text="Next Cover"/>
+
+    <TextSwitcher
+        android:id="@+id/title"
+        android:layout_above="@id/btn_go_next"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true" />
+</RelativeLayout>
