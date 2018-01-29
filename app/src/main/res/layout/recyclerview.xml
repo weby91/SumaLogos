@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -41,7 +41,7 @@
             android:id="@+id/tvDate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="25 hari"
+            android:text="0 hari"
             android:textSize="24sp"
             android:textColor="@color/colorWhite"/>
 
@@ -64,14 +64,14 @@
     <LinearLayout
         android:id="@+id/llTopHeader"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_marginTop="120dp">
 
         <android.support.v7.widget.RecyclerView
             xmlns:android="http://schemas.android.com/apk/res/android"
             android:id="@+id/recycler_view"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_below="@+id/llTopHeader"
             android:scrollbars="none" />
 
@@ -169,4 +169,4 @@
 
 
 
-</android.support.constraint.ConstraintLayout>
+</LinearLayout>

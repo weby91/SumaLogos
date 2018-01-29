@@ -1,78 +1,124 @@
 package com.sumalogos.webster.sumalogos.model;
 
-import android.support.annotation.NonNull;
-import android.support.v7.widget.CardView;
-import android.support.v7.widget.RecyclerView;
-import android.view.View;
+import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.PrimaryKey;
 
-import com.mikepenz.fastadapter.items.AbstractItem;
-import com.sumalogos.webster.sumalogos.R;
-
-import java.util.List;
-
-import butterknife.BindView;
-import butterknife.ButterKnife;
+import com.google.gson.annotations.SerializedName;
 
 /**
  * Created by webster on 04/01/18.
  */
 
-public class Devotion extends AbstractItem<Devotion, Devotion.ViewHolder> {
+@Entity
+public class Devotion {
 
-    public int imageResId;
-    public int titleResId;
+    @PrimaryKey
+    @SerializedName("id")
+    private int id;
 
-    private String title;
-    private int image;
+    @SerializedName("day")
+    private int day;
 
-    public Devotion(String title,  int image) {
+    @SerializedName("week_day")
+    private String weekDay;
 
-        this.title = title;
+    @SerializedName("date")
+    private String date;
 
-        this.image = image;
+    @SerializedName("book")
+    private String book;
+
+    @SerializedName("total_read")
+    private int totalRead;
+
+    @SerializedName("total_share")
+    private int totalShare;
+
+    @SerializedName("total_discussion")
+    private int totalDiscussion;
+
+    @SerializedName("book_param")
+    private String bookParam;
+
+    private boolean isFinished = false;
+
+    public int getId() {
+        return id;
     }
 
-    public String getTitle() {
-        return title;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public int getImage() {
-        return image;
+    public int getDay() {
+        return day;
     }
 
-    public Devotion (int imageResId, int titleResId){
-        this.imageResId = imageResId;
-        this.titleResId = titleResId;
+    public void setDay(int day) {
+        this.day = day;
     }
 
-    @Override
-    public ViewHolder getViewHolder(@NonNull View v) {
-        return new Devotion.ViewHolder(v);
+    public String getWeekDay() {
+        return weekDay;
     }
 
-    @Override
-    public void bindView(Devotion.ViewHolder viewHolder, List<Object> juloPayments) {
-        super.bindView(viewHolder, juloPayments);
+    public void setWeekDay(String weekDay) {
+        this.weekDay = weekDay;
     }
 
-    @Override
-    public int getType() {
-        return 0;
+    public String getDate() {
+        return date;
     }
 
-    @Override
-    public int getLayoutRes() {
-        return R.layout.fragment_home_card;
+    public void setDate(String date) {
+        this.date = date;
     }
 
-    protected static class ViewHolder extends RecyclerView.ViewHolder {
+    public String getBook() {
+        return book;
+    }
 
-        @BindView(R.id.cardView)
-        CardView cardView;
+    public void setBook(String book) {
+        this.book = book;
+    }
 
-        public ViewHolder(View view) {
-            super(view);
-            ButterKnife.bind(this, view);
-        }
+    public int getTotalRead() {
+        return totalRead;
+    }
+
+    public void setTotalRead(int totalRead) {
+        this.totalRead = totalRead;
+    }
+
+    public int getTotalShare() {
+        return totalShare;
+    }
+
+    public void setTotalShare(int totalShare) {
+        this.totalShare = totalShare;
+    }
+
+    public int getTotalDiscussion() {
+        return totalDiscussion;
+    }
+
+    public void setTotalDiscussion(int totalDiscussion) {
+        this.totalDiscussion = totalDiscussion;
+    }
+
+    public boolean isFinished() {
+        return isFinished;
+    }
+
+    public void setFinished(boolean finished) {
+        isFinished = finished;
+    }
+
+    public String getBookParam() {
+        return bookParam;
+    }
+
+    public void setBookParam(String bookParam) {
+        this.bookParam = bookParam;
     }
 }

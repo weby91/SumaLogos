@@ -25,14 +25,23 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
     @Override
     public void onMessageReceived(RemoteMessage remoteMessage) {
         Uri defaultSoundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+
+        String title = "";
+        String body = "";
+
+        if (remoteMessage.getNotification() != null) {
+            title = remoteMessage.getNotification().getTitle();
+            body = remoteMessage.getNotification().getBody();
+        }
+
         NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this)
-                .setSmallIcon(R.drawable.ic_fb)
-                .setContentTitle("TEST")
-                .setContentText("WOI")
+                .setSmallIcon(R.drawable.logo_summa_logos)
+                .setContentTitle(title)
+                .setContentText(body)
                 .setAutoCancel(true)
+                .setColor(getResources().getColor(R.color.redMaroon))
                 .setSound(defaultSoundUri)
-                .setPriority(Notification.PRIORITY_HIGH)
-                .setStyle(new NotificationCompat.BigTextStyle().bigText("woi"));
+                .setPriority(Notification.PRIORITY_HIGH);
 
         NotificationManager notificationManager =
                 (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);

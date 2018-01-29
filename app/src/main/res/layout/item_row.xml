@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -8,402 +8,227 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <android.support.v7.widget.CardView
+        <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
             xmlns:card_view="http://schemas.android.com/apk/res-auto"
-            xmlns:android="http://schemas.android.com/apk/res/android"
             android:id="@+id/card_view3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            card_view:cardElevation="10dp"
-            card_view:cardUseCompatPadding="true"
             card_view:cardCornerRadius="8dp"
-            >
+            card_view:cardElevation="10dp"
+            card_view:cardUseCompatPadding="true">
 
             <!--   Recycler View Item Row   -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="10dp"
                 android:gravity="center"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:padding="10dp">
 
                 <TextView
                     android:id="@+id/tvDays"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Rabu"
-                    android:textSize="32sp"
-                    android:textColor="@color/colorBlack"/>
+                    android:textColor="@color/colorBlack"
+                    android:textSize="32sp" />
 
                 <View
                     android:layout_width="wrap_content"
                     android:layout_height="1dp"
-                    android:background="@color/colorBlack"/>
+                    android:background="@color/colorBlack" />
 
                 <TextView
                     android:id="@+id/tvDates"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="12 Januari 2018"
-                    android:textSize="24sp"
-                    android:textColor="@color/colorBlack"/>
+                    android:textColor="@color/colorBlack"
+                    android:textSize="24sp" />
 
                 <TextView
-                    android:visibility="gone"
                     android:id="@+id/tvSummary"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Total bacaan"
+                    android:layout_marginBottom="5dp"
                     android:gravity="center"
+                    android:text="Total bacaan"
                     android:textSize="16sp"
-                    android:layout_marginBottom="5dp"/>
+                    android:visibility="gone" />
 
                 <TextView
-                    android:visibility="gone"
-                    android:gravity="center"
                     android:id="@+id/tvDayTotal"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/tvSummary"
+                    android:gravity="center"
                     android:text="25 hari"
+                    android:textSize="20sp"
                     android:textStyle="bold"
-                    android:textSize="20sp"/>
+                    android:visibility="gone" />
 
                 <SeekBar
-                    android:visibility="gone"
-                    android:layout_marginTop="5dp"
-                    android:layout_below="@id/tvDayTotal"
-                    android:layout_gravity="center_vertical"
                     android:id="@+id/seekBar"
+                    style="@style/SeekbarGradient"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    style="@style/SeekbarGradient"
-                    android:progress="30"
+                    android:layout_below="@id/tvDayTotal"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginTop="5dp"
                     android:max="365"
-                    />
-
+                    android:progress="30"
+                    android:visibility="gone" />
 
 
             </LinearLayout>
 
         </android.support.v7.widget.CardView>
 
-    <android.support.v7.widget.CardView
-        xmlns:card_view="http://schemas.android.com/apk/res-auto"
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/card_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        card_view:cardElevation="8dp"
-        card_view:cardUseCompatPadding="true"
-        card_view:cardCornerRadius="8dp"
-        >
+        <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/card_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            card_view:cardCornerRadius="8dp"
+            card_view:cardElevation="8dp"
+            card_view:cardUseCompatPadding="true">
 
-        <!--   Recycler View Item Row   -->
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:orientation="vertical"
-            android:layout_height="wrap_content">
-
-            <LinearLayout
-                android:background="@drawable/gradient_devotion_header_background"
-                android:id="@+id/llTopInfo"
-                android:paddingTop="5dp"
-                android:paddingBottom="5dp"
+            <!--   Recycler View Item Row   -->
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:weightSum="3">
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
                 <LinearLayout
-                    android:layout_width="0dp"
+                    android:id="@+id/llTopInfo"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:gravity="center">
+                    android:background="@drawable/gradient_devotion_header_background"
+                    android:orientation="horizontal"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp"
+                    android:weightSum="3">
 
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="20dp"
-                        android:src="@drawable/ic_eye"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
+                    <LinearLayout
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:textColor="@color/colorWhite"
-                        android:text="52"/>
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="22dp"
+                            android:src="@drawable/ic_eye" />
+
+                        <TextView
+                            android:id="@+id/tvTotalRead"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0"
+                            android:textColor="@color/colorWhite" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="20dp"
+                            android:src="@drawable/ic_share" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0"
+                            android:textColor="@color/colorWhite" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="20dp"
+                            android:src="@drawable/ic_comment" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0"
+                            android:textColor="@color/colorWhite" />
+
+                    </LinearLayout>
+
 
                 </LinearLayout>
 
                 <LinearLayout
-                    android:layout_width="0dp"
+                    android:id="@+id/llHari"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
+                    android:layout_below="@+id/llTopInfo"
                     android:gravity="center">
 
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="20dp"
-                        android:src="@drawable/ic_share"/>
-
-                    <TextView
+                    <TextSwitcher
+                        android:id="@+id/tsVerse"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="@color/colorWhite"
-                        android:text="12"/>
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/tvVerse"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:textColorLink="@color/com_facebook_blue"
+                        android:textSize="28sp" />
 
                 </LinearLayout>
+
+                <View
+                    android:id="@+id/llSeparatorHari"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.1dp"
+                    android:layout_below="@+id/llHari"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginRight="50dp"
+                    android:background="@color/colorBlack" />
 
                 <LinearLayout
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:gravity="center">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="20dp"
-                        android:src="@drawable/ic_comment"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/colorWhite"
-                        android:text="2"/>
-
-                </LinearLayout>
-
-
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_below="@+id/llTopInfo"
-                android:id="@+id/llHari"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center">
-
-            <TextSwitcher
-                android:visibility="gone"
-                android:id="@+id/tsVerse"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                />
-
-            <TextView
-                android:id="@+id/tvVerse1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="28sp"
-                android:textColorLink="@color/com_facebook_blue"
-                android:text="Mazmur 5 - 7"/>
-
-            </LinearLayout>
-
-            <View
-                android:id="@+id/llSeparatorHari"
-                android:layout_width="match_parent"
-                android:layout_height="0.1dp"
-                android:layout_marginLeft="50dp"
-                android:layout_marginRight="50dp"
-                android:layout_below="@+id/llHari"
-                android:background="@color/colorBlack"/>
-
-            <LinearLayout
-                android:layout_below="@id/llSeparatorHari"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:orientation="horizontal"
-                android:paddingTop="10dp"
-                android:paddingBottom="10dp">
-
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_below="@id/llSeparatorHari"
                     android:gravity="center"
-                    android:background="@drawable/rounded_button_finish"
-                    android:textAllCaps="false"
-                    android:text="Selesai"/>
+                    android:orientation="horizontal"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="10dp">
 
-                <!--<ImageView-->
-                    <!--android:layout_width="match_parent"-->
-                    <!--android:layout_height="30dp"-->
-                    <!--android:src="@drawable/ic_green_check_mark"/>-->
-                <!--<TextView-->
-                    <!--android:gravity="center"-->
-                    <!--android:layout_width="wrap_content"-->
-                    <!--android:textSize="16sp"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:text="Selesai"/>-->
-
-            </LinearLayout>
-
-
-
-
-
-        </RelativeLayout>
-
-    </android.support.v7.widget.CardView>
-
-    <android.support.v7.widget.CardView
-        android:visibility="gone"
-        xmlns:card_view="http://schemas.android.com/apk/res-auto"
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/card_view2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        card_view:cardElevation="10dp"
-        card_view:cardUseCompatPadding="true"
-        card_view:cardCornerRadius="8dp"
-        >
-
-        <!--   Recycler View Item Row   -->
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:orientation="vertical"
-            android:layout_height="wrap_content">
-
-            <LinearLayout
-                android:background="@drawable/gradient_devotion_header_background"
-                android:id="@+id/llTopInfo2"
-                android:paddingTop="5dp"
-                android:paddingBottom="5dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:weightSum="3">
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:gravity="center">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="20dp"
-                        android:src="@drawable/ic_eye"/>
-
-                    <TextView
+                    <Button
+                        android:id="@+id/btnSelesai"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="@color/colorWhite"
-                        android:text="33"/>
+                        android:background="@drawable/rounded_button_finish"
+                        android:gravity="center"
+                        android:text="Selesai"
+                        android:textAllCaps="false" />
 
                 </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:gravity="center">
+            </RelativeLayout>
 
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="20dp"
-                        android:src="@drawable/ic_share"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/colorWhite"
-                        android:text="6"/>
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:gravity="center">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="20dp"
-                        android:src="@drawable/ic_comment"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/colorWhite"
-                        android:text="1"/>
-
-                </LinearLayout>
-
-
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_below="@+id/llTopInfo2"
-                android:id="@+id/llHari2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="28sp"
-                    android:text="Ayub 8"/>
-
-            </LinearLayout>
-
-            <View
-                android:id="@+id/llSeparatorHari2"
-                android:layout_width="match_parent"
-                android:layout_height="0.1dp"
-                android:layout_marginLeft="50dp"
-                android:layout_marginRight="50dp"
-                android:layout_below="@+id/llHari2"
-                android:background="@color/colorBlack"/>
-
-            <LinearLayout
-                android:layout_below="@id/llSeparatorHari2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:orientation="horizontal"
-                android:paddingTop="10dp"
-                android:paddingBottom="10dp">
-
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:background="@drawable/rounded_button_finish"
-                    android:textAllCaps="false"
-                    android:text="Selesai"/>
-
-                <!--<ImageView-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="30dp"-->
-                <!--android:src="@drawable/ic_green_check_mark"/>-->
-                <!--<TextView-->
-                <!--android:gravity="center"-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:textSize="16sp"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:text="Selesai"/>-->
-
-            </LinearLayout>
-
-
-
-
-
-        </RelativeLayout>
-
-    </android.support.v7.widget.CardView>
+        </android.support.v7.widget.CardView>
 
     </LinearLayout>
 
-</android.support.constraint.ConstraintLayout>
+</LinearLayout>

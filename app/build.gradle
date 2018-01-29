@@ -1,14 +1,31 @@
 allprojects {
     repositories {
+        google()
         jcenter()
     }
+}
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath 'me.tatarka:gradle-retrolambda:3.6.1'
+    }
+}
+
+repositories {
+    mavenCentral()
+    maven { url 'https://jitpack.io' }
+    maven { url "https://maven.google.com" }
 }
 
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
-ext.kotlin_version = '1.2.10'
+ext.kotlin_version = '1.2.20'
 
 android {
     flavorDimensions "default"
@@ -18,7 +35,7 @@ android {
         minSdkVersion 21
         targetSdkVersion 26
         versionCode 1
-        versionName "1.0"
+        versionName "1.0.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -34,6 +51,10 @@ android {
         production {
             buildConfigField "String", "BASE_URL", '"http://139.59.241.229:3000/api/v1/"'
         }
+    }
+    compileOptions {
+        targetCompatibility 1.8
+        sourceCompatibility 1.8
     }
 }
 
@@ -89,6 +110,8 @@ dependencies {
     kapt 'com.jakewharton:butterknife-compiler:8.8.1'
 
     implementation 'com.github.moondroid.coverflow:library:1.0'
+
+    implementation 'com.google.android.gms:play-services-auth:11.8.0'
 }
 
 apply plugin: 'com.google.gms.google-services'
