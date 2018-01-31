@@ -7,12 +7,12 @@ import android.support.v7.widget.RecyclerView;
 import android.text.Html;
 import android.text.Spanned;
 import android.text.method.LinkMovementMethod;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.sumalogos.webster.sumalogos.R;
 import com.sumalogos.webster.sumalogos.activity.HomeActivity;
@@ -200,17 +200,24 @@ public class DevotionAdapter extends RecyclerView.Adapter<DevotionAdapter.ViewHo
 
             holder.tvVerse.setOnClickListener(view -> {
 
-                if (intent1 != null) {
-                    intent1 = new Intent("yuku.alkitab.action.SHOW_VERSES_DIALOG");
-                    intent1.putExtra("target", "o:" + devotion.getBookParam());
-                    intent1.addFlags(Intent.FLAG_ACTIVITY_NEW_DOCUMENT);
-                    context.startActivity(intent1);
-                } else if (intent2 != null) {
-                    context.startActivity(intent2);
-                } else if (intent3 != null) {
-                    context.startActivity(intent3);
-                } else if (intent4 != null) {
-                    context.startActivity(intent4);
+                try {
+                    if (intent1 != null) {
+                        intent1 = new Intent("yuku.alkitab.action.SHOW_VERSES_DIALOG");
+                        intent1.putExtra("target", "o:" + devotion.getBookParam());
+                        intent1.addFlags(Intent.FLAG_ACTIVITY_NEW_DOCUMENT);
+                        context.startActivity(intent1);
+                    } else if (intent2 != null) {
+                        context.startActivity(intent2);
+                    } else if (intent3 != null) {
+                        context.startActivity(intent3);
+                    } else if (intent4 != null) {
+                        context.startActivity(intent4);
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    Toast.makeText(context,
+                            "Ada maslaah dalam membuka Alkitab",
+                            Toast.LENGTH_SHORT).show();
                 }
 
             });
@@ -231,7 +238,6 @@ public class DevotionAdapter extends RecyclerView.Adapter<DevotionAdapter.ViewHo
 
                 holder.btnSelesai.setEnabled(false);
             } else {
-                Log.d("weby", position + " - ENABLEDDDDD " );
 
                 holder.btnSelesai.setBackground(context.getResources()
                         .getDrawable(R.drawable.rounded_button_finish));

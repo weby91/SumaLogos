@@ -7,11 +7,8 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.facebook.AccessToken
-import com.facebook.CallbackManager
-import com.facebook.FacebookCallback
-import com.facebook.FacebookException
-import com.facebook.GraphRequest
+import android.widget.Toast
+import com.facebook.*
 import com.facebook.login.LoginResult
 import com.google.android.gms.auth.api.Auth
 import com.google.android.gms.auth.api.signin.GoogleSignIn
@@ -144,6 +141,9 @@ class LandingPageFragment : BaseFragment()  {
 
                         override fun onError(e: FacebookException) {
                             cancelProgressDialog()
+                            Toast.makeText(activity,
+                                    "Facebook Error",
+                                    Toast.LENGTH_SHORT).show()
                         }
                     })
         }
