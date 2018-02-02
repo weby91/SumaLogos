@@ -40,6 +40,7 @@ public class Devotion {
     @SerializedName("book_param")
     private String bookParam;
 
+    @SerializedName("is_finished")
     private boolean isFinished = false;
 
     public int getId() {

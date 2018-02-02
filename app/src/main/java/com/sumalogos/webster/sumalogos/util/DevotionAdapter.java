@@ -17,7 +17,6 @@ import android.widget.Toast;
 import com.sumalogos.webster.sumalogos.R;
 import com.sumalogos.webster.sumalogos.activity.HomeActivity;
 import com.sumalogos.webster.sumalogos.model.Devotion;
-import com.sumalogos.webster.sumalogos.model.ReadBook;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -228,8 +227,7 @@ public class DevotionAdapter extends RecyclerView.Adapter<DevotionAdapter.ViewHo
 
             holder.tvVerse.setMovementMethod(LinkMovementMethod.getInstance());
 
-
-            if (db.readBookDAO().getReadBook(devotion.getId()) != null) {
+            if (devotion.isFinished()) {
 
                 holder.btnSelesai.setText("");
 
@@ -251,15 +249,10 @@ public class DevotionAdapter extends RecyclerView.Adapter<DevotionAdapter.ViewHo
                 if (listener != null) {
 
                     devotion.setTotalRead(devotion.getTotalRead() + 1);
+                    devotion.setFinished(true);
                     String totalRead1 = devotion.getTotalRead() + "";
 
                     db.devotionDAO().updateDevotion(devotion);
-
-                    ReadBook readBook = new ReadBook();
-
-                    readBook.setBookId(devotion.getId());
-
-                    db.readBookDAO().saveReadBook(readBook);
 
                     Button btn = (Button) view;
                     btn.setEnabled(true);

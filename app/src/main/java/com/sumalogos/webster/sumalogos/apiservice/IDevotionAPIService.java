@@ -16,5 +16,7 @@ import java.util.List;
 public interface IDevotionAPIService {
     LiveData<LiveDataResult<Result<List<Devotion>>>> retrieveDevotions();
 
+    LiveData<LiveDataResult<Result<List<Devotion>>>> retrieveDevotionsV2(long userId);
+
     LiveData<LiveDataResult<UserAndDevotion>> finishRead(long userId, String action, int devotionalId);
 }

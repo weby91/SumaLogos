@@ -34,8 +34,8 @@ android {
         applicationId "com.sumalogos.webster.sumalogos"
         minSdkVersion 21
         targetSdkVersion 26
-        versionCode 3
-        versionName "1.0.2"
+        versionCode 4
+        versionName "1.0.3"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -46,10 +46,10 @@ android {
     }
     productFlavors {
         development {
-            buildConfigField "String", "BASE_URL", '"http://139.59.241.229:3000/api/v1/"'
+            buildConfigField "String", "BASE_URL", '"http://139.59.241.229:3000/api/"'
         }
         production {
-            buildConfigField "String", "BASE_URL", '"http://139.59.241.229:3000/api/v1/"'
+            buildConfigField "String", "BASE_URL", '"http://139.59.241.229:3000/api/"'
         }
     }
     compileOptions {

@@ -34,6 +34,11 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
             body = remoteMessage.getNotification().getBody();
         }
 
+        if (remoteMessage.getData() != null) {
+            title = remoteMessage.getData().get("title");
+            body = remoteMessage.getData().get("body");
+        }
+
         NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this)
                 .setSmallIcon(R.drawable.logo_summa_logos)
                 .setContentTitle(title)

@@ -10,8 +10,11 @@ public class AppConstant {
     public static final long SPLASH_TIME = 2000;
     public static final int TIME_OUT_LIMIT = 20;
     public static final String BASE_API_URL = BASE_URL;
-    public static final String USER  = "user";
-    public static final String DEVOTION  = "devotional";
+    public static final String V1  = "v1/";
+    public static final String V2  = "v2/";
+    public static final String USER  = V1 + "user";
+    public static final String DEVOTION  = V1 + "devotional";
+    public static final String DEVOTION_V2 = V2 + "devotional";
     public static final int REQUEST_CODE_RC_SIGN_IN = 203;
     public static final String[] arrayMonthIndonesiaSentenceCase = new String[]{"Januari", "Februari", "Maret",
             "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "NoveStmber", "Desember"};

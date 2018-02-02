@@ -73,12 +73,12 @@ public class LandingPageViewModel extends BaseViewModel {
         return user;
     }
 
-    public LiveData<LiveDataResult<?>> retrieveDevotions() {
+    public LiveData<LiveDataResult<?>> retrieveDevotions(long userId) {
         MediatorLiveData<LiveDataResult<?>> mediatorLiveData = new MediatorLiveData<>();
         IDevotionAPIService apiService = new DevotionAPIServiceImpl();
 
         mediatorLiveData.addSource(
-                apiService.retrieveDevotions(),
+                apiService.retrieveDevotionsV2(userId),
                 mediatorLiveData::setValue
         );
 

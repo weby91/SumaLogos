@@ -46,6 +46,28 @@ public class DevotionAPIServiceImpl extends BaseAPIService implements IDevotionA
 
         return liveData;
     }
+
+    @Override
+    public LiveData<LiveDataResult<Result<List<Devotion>>>> retrieveDevotionsV2(long userId) {
+        final MutableLiveData<LiveDataResult<Result<List<Devotion>>>> liveData = new MutableLiveData<>();
+
+        try {
+
+            apiInterface.retrieveDevotionsV2(userId)
+                    .subscribeOn(Schedulers.io())
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .subscribe(
+                            result -> liveData.setValue(storeResult(result, "", "")),
+                            error -> liveData.setValue(storeError(error, "", ""))
+                    );
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return liveData;
+    }
+
     @Override
     public LiveData<LiveDataResult<UserAndDevotion>> finishRead(long userId, String action, int devotionalId) {
         final MutableLiveData<LiveDataResult<UserAndDevotion>> liveData = new MutableLiveData<>();

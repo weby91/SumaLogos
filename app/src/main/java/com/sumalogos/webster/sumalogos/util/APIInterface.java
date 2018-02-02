@@ -46,6 +46,10 @@ public interface APIInterface {
     @GET(AppConstant.DEVOTION)
     Single<Result<List<Devotion>>> retrieveDevotions();
 
+    @GET(AppConstant.DEVOTION_V2)
+    Single<Result<List<Devotion>>> retrieveDevotionsV2(
+            @Query("user_id") long userId);
+
     @GET(AppConstant.USER)
     Single<User> retrieveReadingProgress(
         @Query("user_id") long userId);

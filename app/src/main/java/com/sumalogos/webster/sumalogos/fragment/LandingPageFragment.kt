@@ -168,7 +168,7 @@ class LandingPageFragment : BaseFragment()  {
                         user.id = id
                         BaseViewModel.setUser(user)
 
-                        retrieveDevotions()
+                        retrieveDevotions(id)
 
 //                        goToHome()
                         //TODO setelah itu bikin untuk gmail login
@@ -184,8 +184,8 @@ class LandingPageFragment : BaseFragment()  {
         })
     }
 
-    private fun retrieveDevotions() {
-        val liveData = landingPageViewModel.retrieveDevotions()
+    private fun retrieveDevotions(userId : Long) {
+        val liveData = landingPageViewModel.retrieveDevotions(userId)
 
         liveData.observe(this, object : Observer<LiveDataResult<*>> {
             override fun onChanged(response: LiveDataResult<*>?) {
