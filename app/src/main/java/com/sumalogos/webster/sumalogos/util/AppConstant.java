@@ -13,6 +13,7 @@ public class AppConstant {
     public static final String V1  = "v1/";
     public static final String V2  = "v2/";
     public static final String USER  = V1 + "user";
+    public static final String USER_V2  = V2 + "user";
     public static final String DEVOTION  = V1 + "devotional";
     public static final String DEVOTION_V2 = V2 + "devotional";
     public static final int REQUEST_CODE_RC_SIGN_IN = 203;

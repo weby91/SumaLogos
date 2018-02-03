@@ -4,6 +4,7 @@ import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.MutableLiveData;
 
 import com.google.gson.JsonObject;
+import com.sumalogos.webster.sumalogos.BuildConfig;
 import com.sumalogos.webster.sumalogos.model.User;
 import com.sumalogos.webster.sumalogos.util.APIClient;
 import com.sumalogos.webster.sumalogos.util.APIInterface;
@@ -50,7 +51,7 @@ public class UserAPIServiceImpl extends BaseAPIService implements IUserAPIServic
 
         try {
 
-            apiInterface.updateLoginDt(id)
+            apiInterface.updateLoginDt(id, BuildConfig.VERSION_NAME)
                     .subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribe(

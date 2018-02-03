@@ -38,9 +38,10 @@ public interface APIInterface {
             @Field("devotional_id") int devotionalId);
 
     @FormUrlEncoded
-    @PATCH(AppConstant.USER)
+    @PATCH(AppConstant.USER_V2)
     Completable updateLoginDt(
-        @Field("id") long id
+        @Field("id") long id,
+        @Field("app_version") String appVersion
     );
 
     @GET(AppConstant.DEVOTION)

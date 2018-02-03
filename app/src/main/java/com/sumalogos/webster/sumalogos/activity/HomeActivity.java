@@ -7,7 +7,9 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.LinearSnapHelper;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.SnapHelper;
 import android.view.View;
 import android.widget.SeekBar;
 import android.widget.TextView;
@@ -90,9 +92,9 @@ public class HomeActivity extends AppCompatActivity {
         recyclerView
                 .setLayoutManager(new LinearLayoutManager(HomeActivity.this, LinearLayoutManager.HORIZONTAL, false));
 
-//        SnapHelper snapHelper = new LinearSnapHelper();
-//
-//        snapHelper.attachToRecyclerView(recyclerView);
+        SnapHelper snapHelper = new LinearSnapHelper();
+
+        snapHelper.attachToRecyclerView(recyclerView);
 
     }
 

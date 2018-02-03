@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -41,9 +42,9 @@ public class DevotionAdapter extends RecyclerView.Adapter<DevotionAdapter.ViewHo
 
     private AppDatabase db;
 
-    private String[] oldTestamentBooks = AppConstant.oldTestamentBooks;
-
-    private String[] newYestamentBooks = AppConstant.newTestamentBooks;
+//    private String[] oldTestamentBooks = AppConstant.oldTestamentBooks;
+//
+//    private String[] newYestamentBooks = AppConstant.newTestamentBooks;
 
     private Intent intent1;
     private Intent intent2;
@@ -77,93 +78,93 @@ public class DevotionAdapter extends RecyclerView.Adapter<DevotionAdapter.ViewHo
 
     }
 
-    private String mappingBooks(String book) {
-        String result = "";
-//Kejadian 2-5
-        if (book.contains("#")) {
-            book = book.split("#")[0].trim();
-        }
-
-        if (book.contains(" ")) {
-            book = book.split(" ")[0];
-        }
-
-        book = book.trim();
-
-        switch (book.toLowerCase()) {
-            case "kejadian": result = "Gen"; break;
-            case "keluaran": result = "Exod"; break;
-            case "imamat": result = "Lev"; break;
-            case "bilangan": result = "Num"; break;
-            case "ulangan": result = "Deut"; break;
-            case "yosua": result = "Josh"; break;
-            case "hakim-hakim": result = "Judg"; break;
-            case "rut": result = "Ruth"; break;
-            case "1 samuel": result = "1Sam"; break;
-            case "2 samuel": result = "2Sam"; break;
-            case "1 raja-raja": result = "1Kgs"; break;
-            case "2 raja-raja": result = "2Kgs"; break;
-            case "1 tawarikh": result = "1Chr"; break;
-            case "2 tawarikh": result = "2Chr"; break;
-            case "ezra": result = "Ezra"; break;
-            case "nehemia": result = "Neh"; break;
-            case "ester": result = "Esth"; break;
-            case "ayub": result = "Job"; break;
-            case "mazmur": result = "Ps"; break;
-            case "amsal": result = "Prov"; break;
-            case "pengkhotbah": result = "Eccl"; break;
-            case "kidung agung": result = "Song"; break;
-            case "yesaya": result = "Isa"; break;
-            case "yeremia": result = "Jer"; break;
-            case "ratapan": result = "Lam"; break;
-            case "yehezkiel": result = "Ezek"; break;
-            case "daniel": result = "Dan"; break;
-            case "hosea": result = "Hos"; break;
-            case "yoel": result = "Joel"; break;
-            case "amos": result = "Amos"; break;
-            case "obaja": result = "Obad"; break;
-            case "yunus": result = "Jonah"; break;
-            case "mikha": result = "Mic"; break;
-            case "nahum": result = "Nah"; break;
-            case "habakuk": result = "Hab"; break;
-            case "zefanya": result = "Zeph"; break;
-            case "hagai": result = "Hag"; break;
-            case "zakharia": result = "Zech"; break;
-            case "maleakhi": result = "Mal"; break;
-
-            case "matius": result = "Matt"; break;
-            case "markus": result = "Mark"; break;
-            case "lukas": result = "Luke"; break;
-            case "yohanes": result = "John"; break;
-            case "kisah para rasul": result = "Acts"; break;
-            case "roma": result = "Rom"; break;
-            case "1 korintus": result = "1Cor"; break;
-            case "2 korintus": result = "2Cor"; break;
-            case "galatia": result = "Gal"; break;
-            case "efesus": result = "Eph"; break;
-            case "filipi": result = "Phil"; break;
-            case "kolose": result = "Col"; break;
-            case "1 tesalonika": result = "1Thess"; break;
-            case "2 tesalonika": result = "2Thess"; break;
-            case "1 timotius": result = "1Tim"; break;
-            case "2 timotius": result = "2Tim"; break;
-            case "titus": result = "Titus"; break;
-            case "filemon": result = "Phlm"; break;
-            case "ibrani": result = "Heb"; break;
-            case "yakobus": result = "Jas"; break;
-            case "1 petrus": result = "1Pet"; break;
-            case "2 petrus": result = "2Pet"; break;
-            case "1 yohanes": result = "1John"; break;
-            case "2 yohanes": result = "2John"; break;
-            case "3 yohanes": result = "3John"; break;
-            case "yudas": result = "Jude"; break;
-            case "wahyu": result = "Rev"; break;
-
-        }
-
-        return result;
-
-    }
+//    private String mappingBooks(String book) {
+//        String result = "";
+////Kejadian 2-5
+//        if (book.contains("#")) {
+//            book = book.split("#")[0].trim();
+//        }
+//
+//        if (book.contains(" ")) {
+//            book = book.split(" ")[0];
+//        }
+//
+//        book = book.trim();
+//
+//        switch (book.toLowerCase()) {
+//            case "kejadian": result = "Gen"; break;
+//            case "keluaran": result = "Exod"; break;
+//            case "imamat": result = "Lev"; break;
+//            case "bilangan": result = "Num"; break;
+//            case "ulangan": result = "Deut"; break;
+//            case "yosua": result = "Josh"; break;
+//            case "hakim-hakim": result = "Judg"; break;
+//            case "rut": result = "Ruth"; break;
+//            case "1 samuel": result = "1Sam"; break;
+//            case "2 samuel": result = "2Sam"; break;
+//            case "1 raja-raja": result = "1Kgs"; break;
+//            case "2 raja-raja": result = "2Kgs"; break;
+//            case "1 tawarikh": result = "1Chr"; break;
+//            case "2 tawarikh": result = "2Chr"; break;
+//            case "ezra": result = "Ezra"; break;
+//            case "nehemia": result = "Neh"; break;
+//            case "ester": result = "Esth"; break;
+//            case "ayub": result = "Job"; break;
+//            case "mazmur": result = "Ps"; break;
+//            case "amsal": result = "Prov"; break;
+//            case "pengkhotbah": result = "Eccl"; break;
+//            case "kidung agung": result = "Song"; break;
+//            case "yesaya": result = "Isa"; break;
+//            case "yeremia": result = "Jer"; break;
+//            case "ratapan": result = "Lam"; break;
+//            case "yehezkiel": result = "Ezek"; break;
+//            case "daniel": result = "Dan"; break;
+//            case "hosea": result = "Hos"; break;
+//            case "yoel": result = "Joel"; break;
+//            case "amos": result = "Amos"; break;
+//            case "obaja": result = "Obad"; break;
+//            case "yunus": result = "Jonah"; break;
+//            case "mikha": result = "Mic"; break;
+//            case "nahum": result = "Nah"; break;
+//            case "habakuk": result = "Hab"; break;
+//            case "zefanya": result = "Zeph"; break;
+//            case "hagai": result = "Hag"; break;
+//            case "zakharia": result = "Zech"; break;
+//            case "maleakhi": result = "Mal"; break;
+//
+//            case "matius": result = "Matt"; break;
+//            case "markus": result = "Mark"; break;
+//            case "lukas": result = "Luke"; break;
+//            case "yohanes": result = "John"; break;
+//            case "kisah para rasul": result = "Acts"; break;
+//            case "roma": result = "Rom"; break;
+//            case "1 korintus": result = "1Cor"; break;
+//            case "2 korintus": result = "2Cor"; break;
+//            case "galatia": result = "Gal"; break;
+//            case "efesus": result = "Eph"; break;
+//            case "filipi": result = "Phil"; break;
+//            case "kolose": result = "Col"; break;
+//            case "1 tesalonika": result = "1Thess"; break;
+//            case "2 tesalonika": result = "2Thess"; break;
+//            case "1 timotius": result = "1Tim"; break;
+//            case "2 timotius": result = "2Tim"; break;
+//            case "titus": result = "Titus"; break;
+//            case "filemon": result = "Phlm"; break;
+//            case "ibrani": result = "Heb"; break;
+//            case "yakobus": result = "Jas"; break;
+//            case "1 petrus": result = "1Pet"; break;
+//            case "2 petrus": result = "2Pet"; break;
+//            case "1 yohanes": result = "1John"; break;
+//            case "2 yohanes": result = "2John"; break;
+//            case "3 yohanes": result = "3John"; break;
+//            case "yudas": result = "Jude"; break;
+//            case "wahyu": result = "Rev"; break;
+//
+//        }
+//
+//        return result;
+//
+//    }
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
@@ -215,11 +216,13 @@ public class DevotionAdapter extends RecyclerView.Adapter<DevotionAdapter.ViewHo
                 } catch (Exception e) {
                     e.printStackTrace();
                     Toast.makeText(context,
-                            "Ada maslaah dalam membuka Alkitab",
+                            "Ada masalah dalam membuka Alkitab",
                             Toast.LENGTH_SHORT).show();
                 }
 
             });
+
+            initShareOnClick(holder, devotion, todayDate);
 
             String totalRead = devotion.getTotalRead() + "";
 
@@ -276,6 +279,24 @@ public class DevotionAdapter extends RecyclerView.Adapter<DevotionAdapter.ViewHo
         }
     }
 
+    private void initShareOnClick(ViewHolder holder, Devotion devotion, String todayDate) {
+        holder.ivShare.setOnClickListener(view -> {
+            try {
+                Intent share = new Intent(android.content.Intent.ACTION_SEND);
+                share.setType("text/plain");
+                share.addFlags(Intent.FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET);
+
+                share.putExtra(Intent.EXTRA_SUBJECT, "Summa Logos - " + todayDate + " - " +
+                devotion.getBook().replace("#", ","));
+                share.putExtra(Intent.EXTRA_TEXT, "https://play.google.com/store/apps/details?id=com.sumalogos.webster.sumalogos");
+
+                context.startActivity(Intent.createChooser(share, "Bagikan!"));
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
+    }
+
     static class ViewHolder extends RecyclerView.ViewHolder {
         @BindView(R.id.tvVerse)
         TextView tvVerse;
@@ -294,6 +315,9 @@ public class DevotionAdapter extends RecyclerView.Adapter<DevotionAdapter.ViewHo
 
         @BindView(R.id.tvTotalRead)
         TextView tvTotalRead;
+
+        @BindView(R.id.ivShare)
+        ImageView ivShare;
 
         private ViewHolder(View view) {
             super(view);
